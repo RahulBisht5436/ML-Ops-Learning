@@ -8,7 +8,6 @@ on:
       - main
 jobs:
   notify-on-push:
-    needs: train   # optional: email after train succeeds; omit if you only want push notification
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
