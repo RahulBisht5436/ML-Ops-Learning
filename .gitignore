@@ -17,6 +17,7 @@ sdist/
 var/
 wheels/
 *.egg-info/
+*.dist-info/
 .installed.cfg
 *.egg
 .pytest_cache/
@@ -28,12 +29,30 @@ htmlcov/
 .ruff_cache/
 .pytype/
 cython_debug/
+pip-wheel-metadata/
+share/python-wheels/
+pip-log.txt
+pip-delete-this-directory.txt
+pyvenv.cfg
+
+# Installed third-party packages (pip install --target, vendored deps, etc.)
+site-packages/
+modules/
+vendor/
+third_party/
+.python_packages/
 
 # Virtual environments
 .venv/
+.venv*/
 venv/
+venv*/
 ENV/
 env/
+env*/
+.virtualenv/
+env.bak/
+venv.bak/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -58,7 +77,10 @@ outputs/
 runs/
 mlruns/
 .wandb/
-.dvc/
+# DVC — track .dvc/config and *.dvc; ignore local cache only
+**/.dvc/cache/
+**/.dvc/tmp/
+**/.dvc/config.local
 *.parquet
 *.csv
 !**/fixtures/**/*.csv
